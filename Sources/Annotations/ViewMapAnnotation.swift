@@ -71,10 +71,10 @@ public struct ViewMapAnnotation<Content: View>: MapAnnotation {
             for: annotation
         ) as? MKMapAnnotationView<Content>
 
-        let tap = UITapGestureRecognizer(target: self, action #selector(self.handleTap(_:)))
-        view.addGestureRecognizer(tap)
-        view.isUserInteractionEnabled = true
-        self.view.addSubview(view)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        view?.addGestureRecognizer(tap)
+        view?.isUserInteractionEnabled = true
+        // addSubview(view)
 
         view?.setup(for: self)
         return view
