@@ -80,7 +80,7 @@ public struct ViewMapAnnotation<Content: View>: MapAnnotation {
         return view
     }
 
-    func touchHappen(_ sender: UITapGestureRecognizer) {
+    @objc func touchHappen(_ sender: UITapGestureRecognizer) {
         print("Hello world from the gesture recognizer")
     }
 
