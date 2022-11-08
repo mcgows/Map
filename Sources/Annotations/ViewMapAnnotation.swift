@@ -73,7 +73,7 @@ public struct ViewMapAnnotation<Content: View>: MapAnnotation {
 
         let tap = UITapGestureRecognizer(target: self, action: "touchHappen")
         view?.addGestureRecognizer(tap)
-        view?.userInteractionEnabled = true
+        view?.isUserInteractionEnabled = true
         // addSubview(view)
 
         view?.setup(for: self)
