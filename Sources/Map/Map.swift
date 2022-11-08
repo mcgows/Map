@@ -508,7 +508,7 @@ extension Map where OverlayItems == [IdentifiableObject<MKOverlay>] {
         interactionModes: MapInteractionModes = .all,
         userTrackingMode: Binding<MKUserTrackingMode>?,
         annotationItems: AnnotationItems,
-        @MapAnnotationBuilder annotationContent: @escaping (AnnotationItems.Element) -> Annotation,
+        @MapAnnotationBuilder annotationContent: @escaping (AnnotationItems.Element) -> MapAnnotation,
         overlays: [MKOverlay] = [],
         @MapOverlayBuilder overlayContent: @escaping (MKOverlay) -> MapOverlay = { overlay in
             assertionFailure("Please provide an `overlayContent` closure for the values in `overlays`.")
