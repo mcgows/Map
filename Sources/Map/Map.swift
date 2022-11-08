@@ -32,7 +32,7 @@ public struct Map<AnnotationItems: RandomAccessCollection, OverlayItems: RandomA
     @Binding var userTrackingMode: MKUserTrackingMode
 
     let annotationItems: AnnotationItems
-    let annotationContent: (AnnotationItems.Element) -> MapAnnotation
+    let annotationContent: (AnnotationItems.Element) -> MapKit.MapAnnotation<AnyView>
 
     let overlayItems: OverlayItems
     let overlayContent: (OverlayItems.Element) -> MapOverlay
@@ -508,7 +508,7 @@ extension Map where OverlayItems == [IdentifiableObject<MKOverlay>] {
         interactionModes: MapInteractionModes = .all,
         userTrackingMode: Binding<MKUserTrackingMode>?,
         annotationItems: AnnotationItems,
-        @MapAnnotationBuilder annotationContent: @escaping (AnnotationItems.Element) -> MapAnnotation,
+        @MapAnnotationBuilder annotationContent: @escaping (AnnotationItems.Element) -> MapKit.MapAnnotation,
         overlays: [MKOverlay] = [],
         @MapOverlayBuilder overlayContent: @escaping (MKOverlay) -> MapOverlay = { overlay in
             assertionFailure("Please provide an `overlayContent` closure for the values in `overlays`.")
